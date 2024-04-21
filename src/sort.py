@@ -5,7 +5,7 @@ def bubble_sort(arr: list, reverse: bool = False) -> list:
     """
     if len(arr) <= 1:
         return arr
-    
+
     if reverse:
         for i in range(len(arr)):
             for j in range(len(arr) - 1, i, -1):
@@ -20,6 +20,7 @@ def bubble_sort(arr: list, reverse: bool = False) -> list:
 
     return arr
 
+
 def selection_sort(arr: list) -> list:
     """
     Complexity: O(n^2)
@@ -32,6 +33,7 @@ def selection_sort(arr: list) -> list:
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
+
 
 def insertion_sort(arr: list) -> list:
     """
@@ -46,6 +48,7 @@ def insertion_sort(arr: list) -> list:
             j -= 1
         arr[j + 1] = key
     return arr
+
 
 def quick_sort(arr: list) -> list:
     """
@@ -62,11 +65,12 @@ def quick_sort(arr: list) -> list:
     # Divide the list into three parts: elements less than the pivot,
     # elements equal to the pivot, and elements greater than the pivot
     left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
+    middle = [pivot]
     right = [x for x in arr if x > pivot]
 
     # Recursively sort the three parts and concatenate them
     return quick_sort(left) + middle + quick_sort(right)
+
 
 def merge_sort(arr: list) -> list:
     """
@@ -77,17 +81,18 @@ def merge_sort(arr: list) -> list:
     if len(arr) <= 1:
         return arr
 
-    # Divide the list into two halves   
+    # Divide the list into two halves
     mid = len(arr) // 2
     left = arr[:mid]
     right = arr[mid:]
-    
+
     # Recursively sort the two halves
     left = merge_sort(left)
     right = merge_sort(right)
-    
+
     # Merge the sorted halves
     return merge(left, right)
+
 
 def merge(left: list, right: list) -> list:
     merged = []
@@ -125,6 +130,7 @@ def heap_sort(arr: list) -> list:
 
     return arr
 
+
 def heapify(arr: list, i: int, length: int):
     largest = i
     left = 2 * i + 1
@@ -143,7 +149,6 @@ def heapify(arr: list, i: int, length: int):
 def main():
     return 0
 
+
 if __name__ == "__main__":
     main()
-
-

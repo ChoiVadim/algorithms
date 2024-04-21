@@ -1,73 +1,133 @@
-def ThreeWayMergeSort(array, left, right):
-    if right - left <= 1:
-        return
+def merge(gArray, low, mid1, mid2, high, destArray):
+    i = low
+    j = mid1
+    k = mid2
+    l = low
 
-    third = (right - left) / 3
-    mid1 = left + third
-    mid2 = mid1 + third
+    # Choose smaller of the smallest in the three ranges
+    while (i < mid1) and (j < mid2) and (k < high):
+        if gArray[i] < gArray[j]:
+            if gArray[i] < gArray[k]:
+                destArray[l] = gArray[i]
+                l += 1
+                i += 1
+            else:
+                destArray[l] = gArray[k]
+                l += 1
+                k += 1
+        else:
+            if gArray[j] < gArray[k]:
+                destArray[l] = gArray[j]
+                l += 1
+                j += 1
+            else:
+                destArray[l] = gArray[k]
+                l += 1
+                k += 1
 
-    ThreeWayMergeSort(array, left, mid1)
-    ThreeWayMergeSort(array, mid1, mid2)
-    ThreeWayMergeSort(array, mid2, right)
-
-    MergeThreeWay(array, left, mid1, mid2, right)
-
-def MergeThreeWay(array, left, mid1, mid2, right):
-    leftArray = array[left:mid1]
-    middleArray = array[mid1:mid2]
-    rightArray = array[mid2:right]
-
-    i = j = k = 0
-    index = left
-
-    while i < len(leftArray) and j < len(middleArray) and k < len(rightArray):
-        minElement = min(leftArray[i], middleArray[j], rightArray[k])
-
-        if minElement == leftArray[i]:
-            array[index] = leftArray[i]
+    # Case where first and second ranges
+    # have remaining values
+    while (i < mid1) and (j < mid2):
+        if gArray[i] < gArray[j]:
+            destArray[l] = gArray[i]
+            l += 1
             i += 1
-        elif minElement == middleArray[j]:
-            array[index] = middleArray[j]
+        else:
+            destArray[l] = gArray[j]
+            l += 1
+            j += 1
+
+    # case where second and third ranges
+    # have remaining values
+    while (j < mid2) and (k < high):
+        if gArray[j] < gArray[k]:
+            destArray[l] = gArray[j]
+            l += 1
             j += 1
         else:
-            array[index] = rightArray[k]
+            destArray[l] = gArray[k]
+            l += 1
             k += 1
-        index += 1
 
-    return array
+    # Case where first and third ranges have
+    # remaining values
+    while (i < mid1) and (k < high):
+        if gArray[i] < gArray[k]:
+            destArray[l] = gArray[i]
+            l += 1
+            i += 1
+        else:
+            destArray[l] = gArray[k]
+            l += 1
+            k += 1
+
+    # Copy remaining values from the first range
+    while i < mid1:
+        destArray[l] = gArray[i]
+        l += 1
+        i += 1
+
+    # Copy remaining values from the second range
+    while j < mid2:
+        destArray[l] = gArray[j]
+        l += 1
+        j += 1
+
+    # Copy remaining values from the third range
+    while k < high:
+        destArray[l] = gArray[k]
+        l += 1
+        k += 1
 
 
-import unittest
+""" Performing the merge sort algorithm on the 
+given array of values in the rangeof indices 
+[low, high). low is minimum index, high is 
+maximum index (exclusive) """
 
-class TestThreeWayMergeSort(unittest.TestCase):
 
-    def test_sort_array_of_three(self):
-        array = [3, 2, 1]
-        left = 0
-        right = 3
-        ThreeWayMergeSort(array, left, right)
-        self.assertEqual(array, [1, 2, 3])
+def mergeSort3WayRec(gArray, low, high, destArray):
+    # If array size is 1 then do nothing
+    if high - low < 2:
+        return
 
-    def test_sort_array_of_five(self):
-        array = [5, 4, 3, 2, 1]
-        left = 0
-        right = 5
-        ThreeWayMergeSort(array, left, right)
-        self.assertEqual(array, [1, 2, 3, 4, 5])
+    # Splitting array into 3 parts
+    mid1 = low + ((high - low) // 3)
+    mid2 = low + 2 * ((high - low) // 3) + 1
 
-    def test_sort_array_of_seven(self):
-        array = [7, 6, 5, 4, 3, 2, 1]
-        left = 0
-        right = 7
-        ThreeWayMergeSort(array, left, right)
-        self.assertEqual(array, [1, 2, 3, 4, 5, 6, 7])
+    # Sorting 3 arrays recursively
+    mergeSort3WayRec(destArray, low, mid1, gArray)
+    mergeSort3WayRec(destArray, mid1, mid2, gArray)
+    mergeSort3WayRec(destArray, mid2, high, gArray)
 
-    def test_sort_array_of_ten(self):
-        array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-        left = 0
-        right = 10
-        ThreeWayMergeSort(array, left, right)
-        self.assertEqual(array, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    # Merging the sorted arrays
+    merge(destArray, low, mid1, mid2, high, gArray)
 
-if __name__ == '__main__':
-    unittest.main()
+
+def mergeSort3Way(gArray, n):
+    # if array size is zero return null
+    if n == 0:
+        return
+
+    # creating duplicate of given array
+    fArray = []
+
+    # copying elements of given array into
+    # duplicate array
+    fArray = gArray.copy()
+
+    # sort function
+    mergeSort3WayRec(fArray, 0, n, gArray)
+
+    # copy back elements of duplicate array
+    # to given array
+    gArray = fArray.copy()
+
+    # return the sorted array
+    return gArray
+
+
+"""
+T(n) = 3T(n/3) + O(n) 
+By solving it using Master method, we get its complexity as O(n log3n). 
+"""

@@ -1,5 +1,7 @@
 import unittest
-from src.sort import quick_sort
+from sort import quick_sort
+
+
 class TestQuickSort(unittest.TestCase):
 
     def test_quick_sort_empty_list(self):
@@ -18,7 +20,10 @@ class TestQuickSort(unittest.TestCase):
         self.assertEqual(quick_sort([1, 2, 3]), [1, 2, 3])
 
     def test_quick_sort_random_list(self):
-        self.assertEqual(quick_sort([5, 3, 8, 1, 6, 2, 9, 4, 7]), [1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertEqual(
+            quick_sort([5, 3, 8, 1, 6, 2, 9, 4, 7]), [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
