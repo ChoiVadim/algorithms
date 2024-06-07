@@ -1,8 +1,8 @@
 # Python program to solve N Queen
 # Problem using backtracking
 
-global N
 N = 4
+numberOfQueens = 4
 
 
 def printSolution(board):
@@ -41,7 +41,7 @@ def isSafe(board, row, col):
 def solveNQUtil(board, col):
     # base case: If all queens are placed
     # then return true
-    if col >= N:
+    if col >= numberOfQueens:
         return True
 
     # Consider this column and try placing
@@ -75,7 +75,18 @@ def solveNQUtil(board, col):
 # solutions, this function prints one of the
 # feasible solutions.
 def solveNQ():
-    board = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    global N, numberOfQueens
+
+    board = [
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+    ]
+
+    N = len(board)
+    numberOfQueens = 5
 
     if solveNQUtil(board, 0) == False:
         print("Solution does not exist")
