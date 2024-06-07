@@ -122,7 +122,7 @@ def heap_sort(arr: list) -> list:
     # Build the heap
     for i in range(len(arr) // 2 - 1, -1, -1):
         heapify(arr, i, len(arr))
-        print(arr)
+    print(arr)
 
     # Sort the heap
     for i in range(len(arr) - 1, 0, -1):
@@ -148,7 +148,7 @@ def heapify(arr: list, i: int, length: int):
 
 
 def main():
-    arr = [2, 8, 13, 5, 6, 7, 3, 13]
+    arr = [2, 8, 13, 5, 6, 7, 3, 12]
     heap_sort(arr)
     print(arr)
 
