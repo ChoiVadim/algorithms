@@ -29,6 +29,7 @@ Navigate to the folder of the algorithm you’re interested in, and run the code
 
 The repository is organized by algorithm type. The general structure is as follows:
 
+```md
 python-algorithm-repo/
 │
 ├── sorting/
@@ -57,26 +58,27 @@ python-algorithm-repo/
     │   ├── fibonacci.py
     │   └── README.md
     └── ...
+```
 
 ## Algorithms
 
 Some of the categories of algorithms included in this repository are:
 
-	•	Sorting Algorithms: Bubble Sort, Quick Sort, Merge Sort, etc.
-	•	Searching Algorithms: Binary Search, Linear Search, etc.
-	•	Graph Algorithms: Depth-First Search (DFS), Breadth-First Search (BFS), Dijkstra’s Algorithm, etc.
-	•	Dynamic Programming: Fibonacci Sequence, Knapsack Problem, etc.
-	•	String Algorithms: KMP Pattern Matching, Rabin-Karp, etc.
+    • Sorting Algorithms: Bubble Sort, Quick Sort, Merge Sort, etc.
+	• Searching Algorithms: Binary Search, Linear Search, etc.
+	• Graph Algorithms: Depth-First Search (DFS), Breadth-First Search (BFS), Dijkstra’s Algorithm, etc.
+	• Dynamic Programming: Fibonacci Sequence, Knapsack Problem, etc.
+	• String Algorithms: KMP Pattern Matching, Rabin-Karp, etc.
 
 ## Contributing
 
 Contributions are welcome! If you’d like to contribute:
 
-	1.	Fork the repository.
-	2.	Create a new branch for your feature or bugfix.
-	3.	Commit your changes with clear and descriptive commit messages.
-	4.	Push your changes to your fork.
-	5.	Submit a pull request to this repository.
+    1. Fork the repository.
+    2. Create a new branch for your feature or bugfix.
+    3. Commit your changes with clear and descriptive commit messages.
+    4. Push your changes to your fork. 
+    5. Submit a pull request to this repository.
 
 Please ensure that your code is well-documented and follows the style guidelines of the language you’re using.
 
