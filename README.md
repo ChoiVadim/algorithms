@@ -23,7 +23,7 @@ To get started with this repository, simply clone the repository to your local m
 git clone https://github.com
 ```
 
-Navigate to the folder of the algorithm you’re interested in, and run the code. Most of the implementations will have an accompanying README.md file with specific instructions on how to run the code.
+Navigate to the folder of the algorithm you’re interested in, and run the code.
 
 ## Folder Structure
 
@@ -34,14 +34,14 @@ python-algorithm-repo/
 │
 ├── sorting/
 │   ├── bubble_sort/
-│   │   ├── bubble_sort.py
-│   │   └── README.md
-│   ├── quick_sort/
-│   │   ├── quick_sort.py
-│   │   └── README.md
-│   └── ...
+│   ├──   
+│   ├── 
+│   ├──
+│   ├──
+│   ├──
+│   
 │
-├── searching/
+├──searching/
 │   ├── binary_search/
 │   │   ├── binary_search.py
 │   │   └── README.md
