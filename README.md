@@ -33,31 +33,29 @@ The repository is organized by algorithm type. The general structure is as follo
 python-algorithm-repo/
 │
 ├── sorting/
-│   ├── bubble_sort/
-│   ├──   
-│   ├── 
-│   ├──
-│   ├──
-│   ├──
+│   ├── bubble_sort
+│   
+│   
+│   
+│   
+│   
 │   
 │
 ├──searching/
-│   ├── binary_search/
-│   │   ├── binary_search.py
-│   │   └── README.md
-│   └── ...
+│   ├── binary_search
+│   
+│  
+│   
 │
 ├── graph_algorithms/
-│   ├── dijkstra/
-│   │   ├── dijkstra.py
-│   │   └── README.md
-│   └── ...
+│   ├── dijkstra
+│   
+│   
+│   
 │
 └── dynamic_programming/
-    ├── fibonacci/
-    │   ├── fibonacci.py
-    │   └── README.md
-    └── ...
+    ├── fibonacci
+
 ```
 
 ## Algorithms
