@@ -1,87 +1,97 @@
-# Algorithm Repository
+# Algorithms Learning Repository
 
-Welcome to the Algorithm Repository! This repository is a collection of various algorithms implemented in python. The primary purpose of this repo is to serve as a reference and a learning resource for those interested in understanding and implementing different algorithms.
+This repository contains implementations of various algorithms and data structures for educational purposes. It's designed to help understand fundamental algorithmic concepts through practical Python implementations.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
-- [Folder Structure](#folder-structure)
-- [Algorithms](#algorithms)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-This repository contains a wide range of algorithms, from basic ones like sorting and searching, to more complex algorithms such as graph traversal and dynamic programming. Each algorithm is implemented with clear, concise code and is accompanied by documentation explaining how it works.
-
-## Getting Started
-
-To get started with this repository, simply clone the repository to your local machine:
-
-```bash
-git clone https://github.com
-```
-
-Navigate to the folder of the algorithm you’re interested in, and run the code.
-
-## Folder Structure
-
-The repository is organized by algorithm type. The general structure is as follows:
-
-```md
-python-algorithm-repo/
-│
-├── sorting/
-│   ├── bubble_sort
-│   
-│   
-│   
-│   
-│   
-│   
-│
-├──searching/
-│   ├── binary_search
-│   
-│  
-│   
-│
-├── graph_algorithms/
-│   ├── dijkstra
-│   
-│   
-│   
-│
-└── dynamic_programming/
-    ├── fibonacci
+## 📁 Repository Structure
 
 ```
+src/
+├── backtracking/          # Backtracking algorithms
+├── branch_n_bound/        # Branch and bound algorithms
+├── divide_n_conquer/      # Divide and conquer algorithms
+├── dynamic_programming/   # Dynamic programming solutions
+├── else/                  # Miscellaneous algorithms
+└── greedy_algorithms/     # Greedy algorithm implementations
+```
 
-## Algorithms
+## 🔍 Algorithm Categories
 
-Some of the categories of algorithms included in this repository are:
+### Backtracking
+- **4queens_algo.py** - 4-Queens problem solver
+- **m_coloring.py** - Graph M-coloring problem
+- **n_queens_algo.py** - N-Queens problem solver
 
-    • Sorting Algorithms: Bubble Sort, Quick Sort, Merge Sort, etc.
-	• Searching Algorithms: Binary Search, Linear Search, etc.
-	• Graph Algorithms: Depth-First Search (DFS), Breadth-First Search (BFS), Dijkstra’s Algorithm, etc.
-	• Dynamic Programming: Fibonacci Sequence, Knapsack Problem, etc.
-	• String Algorithms: KMP Pattern Matching, Rabin-Karp, etc.
+### Branch and Bound
+- **0_1_knapsack_bb.py** - 0/1 Knapsack using branch and bound
+- **TSP_BB.py** - Traveling Salesman Problem using branch and bound
 
-## Contributing
+### Divide and Conquer
+- **ternary_search.py** - Ternary search algorithm
+- **tree_way_megre_sort.py** - Three-way merge sort
 
-Contributions are welcome! If you’d like to contribute:
+### Dynamic Programming
+- **0_1_knapsack_algo.py** - 0/1 Knapsack using dynamic programming
+- **floyd_algo.py** - Floyd-Warshall shortest path algorithm
+- **obtimal_bst.py** - Optimal Binary Search Tree
+- **recursive_algorithm_solving.py** - Recursive vs iterative vs memoized solutions
+- **travelling_salesman_problem.py** - TSP using dynamic programming
 
-    1. Fork the repository.
-    2. Create a new branch for your feature or bugfix.
-    3. Commit your changes with clear and descriptive commit messages.
-    4. Push your changes to your fork. 
-    5. Submit a pull request to this repository.
+### Greedy Algorithms
+- **graph_coloring.py** - Graph coloring using greedy approach
+- **huffman_algo.py** - Huffman coding algorithm
+- **knapsack_algo.py** - Knapsack using greedy approach
+- **kruskal_algo.py** - Kruskal's minimum spanning tree
+- **prim_algo.py** - Prim's minimum spanning tree
 
-Please ensure that your code is well-documented and follows the style guidelines of the language you’re using.
+### Other Algorithms
+- **fib_const.py** - Fibonacci in constant time with unit tests
+- **fib_matrix.py** - Fibonacci using matrix exponentiation
+- **sort_algo.py** - Various sorting algorithms
 
-## License
+## 🚀 Getting Started
 
-This repository is licensed under the MIT License. See the LICENSE file for more details.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd algorithms
+   ```
 
-Happy coding!
+2. Run any algorithm:
+   ```bash
+   python src/dynamic_programming/floyd_algo.py
+   python src/backtracking/n_queens_algo.py
+   ```
+
+3. Run tests (where available):
+   ```bash
+   python src/else/fib_const.py
+   ```
+
+## 📚 Learning Objectives
+
+This repository covers fundamental algorithmic paradigms:
+
+- **Backtracking**: Systematic exploration of solution spaces
+- **Branch and Bound**: Optimization technique for combinatorial problems
+- **Divide and Conquer**: Breaking problems into smaller subproblems
+- **Dynamic Programming**: Optimal substructure and overlapping subproblems
+- **Greedy Algorithms**: Making locally optimal choices
+
+## 🎯 Purpose
+
+This collection is purely for educational purposes to:
+- Understand algorithm design patterns
+- Practice implementation skills
+- Compare different approaches to similar problems
+- Learn time and space complexity analysis
+
+## 📝 Notes
+
+- All implementations are in Python for clarity and readability
+- Code includes comments explaining key concepts
+- Some algorithms include complexity analysis
+- Examples and test cases are provided where applicable
+
+---
+
+*This repository is maintained for learning purposes. Feel free to explore, modify, and experiment with the code!*
